@@ -17,7 +17,7 @@ First few days were mainly trial and error. My first major realisation was that 
 Below is the reward function which I use for model initialisation and getting to the upper quartile of the leaderboard. This reward function firstly promotes the model to be on the centerline. After the first 10 steps, reward is given based on efficient track completion (progress/steps) and speed. Without fixating on the centerline, the model is allowed to explore the track to find a more optimal line by itself (cutting corners, hitting apexes). The plot below with two lines below shows a simplified training behaviour of the reward function. The idea is that since reaching the finish line with smaller number of steps and higher speeds gives it more reward, the model will tend to find an efficient racing line and take it with highest speed possible.
 
 ```python
-#Optimise for progress
+#Optimise for efficient progress and speed
 def reward_function(params):
 
     # Read input variables
