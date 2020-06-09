@@ -1,1 +1,1 @@
-## Welcome to the Deepracer blog
+## Welcome to MickQG's Deepracer blog
