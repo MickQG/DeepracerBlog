@@ -1,6 +1,6 @@
 ## Breaking in to the Top 10 of AWS Deepracer - May 2020
 
-As a F1 buff, I came across the AWS Deepracer May 2020 promotional event and couldn't pass on the challenge to pit myself against the ever smiling 7-time F1 race winner Daniel Ricciardo. Which I almost did in the head-to-head challenge. This article chronicles my 2.5 week journey from a complete AWS Deepracer newbie to placing top 10 of the competitive leaderboard. Part 1 of this blog series I'll discuss how I overcame the AWS Deepracer learning curve and present a robust reward function. In [Part 2](part2.md) I will be sharing my insights on how to break into the top 10 of the leaderboard by using waypoints, and also quantifying the training using the log analysis tools. 
+As a F1 buff, I came across the AWS Deepracer May 2020 promotional event and couldn't pass on the challenge to pit myself against the ever smiling 7-time F1 race winner Daniel Ricciard - which I almost did beat on the first and only try in the head-to-head challenge. This article chronicles my 2.5 week journey from a complete AWS Deepracer newbie to placing top 10 of the competitive leaderboard. Part 1 of this blog series I'll discuss how I overcame the AWS Deepracer learning curve and present a robust reward function. In [Part 2](part2.md) I will be sharing my insights on how to break into the top 10 of the leaderboard by using waypoints, and also quantifying the training using the log analysis tools. 
 
 ![leaderboard](Assets/Leaderboard_combined1.png)
 
