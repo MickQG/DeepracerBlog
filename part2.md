@@ -9,6 +9,8 @@ About a week into my Deepracer journey, the <img src="https://render.githubuserc
 
 The gif above shows the process of creating the custom racing line. In brief, the track points (center line, outer border and inner border) are loaded into a Jupyter Notebook. As the track is layed out on an x-y grid, we can create the custom racing line using cursor input. Analysis on the track and racing line can then be performed. My python implementation can be found __[here](https://github.com/MickQG/deepracer-analysis/blob/master/Track_Analysis.ipynb)__.
 
+## Waypoint Reward Function
+
 The racing line is defined by 4 track regions: left, center left, center right and right. The following reward function gives rewards if the model is in the correct track region and penalises if it is not. Furthermore, for each track point there is also a corresponding speed target for which rewards and penalties are given.
 
 <details>
