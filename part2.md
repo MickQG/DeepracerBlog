@@ -12,7 +12,7 @@ The gif above shows the process of creating the custom racing line. In brief, th
 The racing line is defined by 4 track regions: left, center left, center right and right. The following reward function gives rewards if the model is in the correct track region and penalises if it is not. Furthermore, for each track point there is also a corresponding speed target for which rewards and penalties are given.
 
 <details>
-  <summary>Click for reward function</summary>
+  <summary>Click to expand reward function</summary>
     
 ```python
 # Racing line using Waypoints
