@@ -1,10 +1,10 @@
-## Breaking in to the Top 10 of AWS Deepracer Competition - May 2020
+# Breaking in to the Top 10 of AWS Deepracer Competition - May 2020
 
 As a F1 buff, I came across the AWS Deepracer May 2020 promotional event and couldn't pass on the challenge to pit myself against the ever smiling 7-time F1 race winner Daniel Ricciardo. This article chronicles my 2.5 week journey from a complete AWS Deepracer newbie to placing top 10 of the Beginner Challenge competitive leaderboard. Part 1 of this blog series I'll discuss how I overcame the AWS Deepracer learning curve and present a robust reward function. In [Part 2](part2.md) I will be sharing my insights on how to break into the top 10 of the leaderboard by using waypoints, and also quantifying the training using the log analysis tools. 
 
 ![leaderboard](Assets/Leaderboard_top10.png)
 
-### Accelerating Through the Learning Curve
+## Accelerating Through the Learning Curve
 
 After training the Original Deepracer model that everyone starts out with, I realised that to be competitive the model needs speed and stability. Scavenging the internet for any piece of hidden gem that I could uncover, I found the the following was crucial to overcome the steep learning curve in a short period of time: 
 * Completing the AWS Deepracer online course
@@ -15,7 +15,7 @@ After training the Original Deepracer model that everyone starts out with, I rea
 
 In the month of May there were many events running - 3 different race modes and 2 different tracks. From my initial experimentations in model training, I observed that I needed at least 6 hours to train a stable model (which turned out to be an underestimate when training with higher speeds). I made an executive decision early on to only train for the time trials race mode. Also since the Summit Online and Beginner-Challenge events were both run on the reInvent2019 track I opted to put my initial focus on this shorter track.
 
-### Reward Function, Action Space and Hyperparameters
+## Reward Function, Action Space and Hyperparameters
 
 First few days were mainly trial and error. My first major realisation was that rather than the default step function centerline reward, the reward function needed to be more granular. Due to the random exploration nature of the training, a continuously sloping reward function pushes the model towards the desired behaviour much faster. 
 
