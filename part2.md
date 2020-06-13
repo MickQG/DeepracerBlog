@@ -1,20 +1,20 @@
-# Part2: Breaking into the Top 10
+# Part 2: Breaking into the Top 10
 
 This is part 2 of the MickQG's Deepracer blog series. You can find Part 1 __[here](https://mickqg.github.io/DeepracerBlog/)__.
 
-About a week into my Deepracer journey, the <img src="https://render.githubusercontent.com/render/math?math=(Progress/Steps)*Speed"> reward function outlined in [Part 1](https://mickqg.github.io/DeepracerBlog/) hit a 14s brick wall in lap times on the reInvent2019 track. My second big realisation which solved this problem came as a result of knowing a bit of motor racing and watch many many hours of F1. Why don't we create an optimal racing line that trains the car to hit corner apexes and carry as much speed through the corners as possible? Waypoints seem to be the [current meta](https://youtu.be/Ao6Ppdz-F1I?t=131) to efficiently train for the fastest laptimes.
+About a week into my Deepracer journey, the <img src="https://render.githubusercontent.com/render/math?math=(Progress/Steps)*Speed"> reward function outlined in [Part 1](https://mickqg.github.io/DeepracerBlog/) hit a 14s brick wall in lap times on the reInvent2019 track. My realisation which solved this problem came as a result of knowing a bit of motor racing and watch many many hours of F1. Why don't we create an optimal racing line that trains the car to hit corner apexes and carry as much speed through the corners as possible? Using waypoints seem to be the [current meta](https://youtu.be/Ao6Ppdz-F1I?t=131) to efficiently train for the fastest laptimes.
 
 ## Waypoints, Waypoints, Waypoints
 ![gif](Assets/Gif_large.gif) 
 
 The gif above shows the process of creating the custom racing line. In brief, the track points (center line, outer border and inner border) are loaded into a Jupyter Notebook. As the track is layed out on an x-y grid, we can create the custom racing line using cursor input. Analysis on the track and racing line can then be performed. My python implementation can be found __[here](https://github.com/MickQG/deepracer-analysis/blob/master/Track_Analysis.ipynb)__.
 
-## Waypoint Reward Function
+## Waypoints Reward Function
 
-The racing line is defined by 4 track regions: left, center left, center right and right. The following reward function gives rewards if the model is in the correct track region and penalises if it is not. Furthermore, for each track point there is also a corresponding speed target for which rewards and penalties are given.
+The racing line is defined by 4 track regions: left, center left, center right and right. The following reward function gives rewards if the model is in the correct track region, and penalises if it is not. Furthermore, for each track point there is also a corresponding speed target for which rewards and penalties are given.
 
 <details>
-  <summary>Click to expand reward function</summary>
+  <summary><strong>Click to expand reward function</strong></summary>
     
 ```python
 # Racing line using Waypoints
@@ -120,7 +120,7 @@ def reward_function(params):
     
 ## Log Analysis - Deeper into the Rabbit Hole
 
-The general adage of deliberate practice - to practice systematically and purposefully - does also apply to RL. In our case we want to confirm that the action space is suitable for the track and reward function is incentivising the right behaviour. The log analysis tool is vital in understanding your trained model. It has much more detail than graphs in the online training console. Many thanks to Tomasz (Breadcentric) Ptak for maintaining the notebook and making it accessibe through his [blog](https://blog.deepracing.io/2020/03/30/introducing-aws-deepracer-log-analysis/) and [github repo](https://github.com/aws-deepracer-community/deepracer-analysis).
+The general adage of deliberate practice - to practice systematically and purposefully - does also apply to RL. In our case we want to confirm the action space is suitable for the track and reward function is incentivising the right behaviour. The log analysis tool is vital in understanding your trained model. It has much more detail than graphs in the online training console. Many thanks to Tomasz (Breadcentric) Ptak for maintaining the notebook and making it accessibe through his [blog](https://blog.deepracing.io/2020/03/30/introducing-aws-deepracer-log-analysis/) and [github repo](https://github.com/aws-deepracer-community/deepracer-analysis).
 
 ![Logplot1](Assets/log_combined.png)
 
@@ -128,7 +128,7 @@ To showcase the power of this log analysis tool, the above two graphs show impor
 
 ![Logplot2](Assets/log4-line.png)
 
-Furthermore, I modified and included a few new plots to analyse model's behaviour. Left is a box plot view of completed lap times for each iteration, and right is the box plot of average throttle (speed) values for each iteration. The trend above shows good convergence as lap times decrease and throttle values increase over training period.
+Furthermore, I modified and included a few new plots to analyse model's behaviour. Left is a box plot view of completed lap times for each iteration, and right is the box plot of average throttle (speed) values for each iteration. The trend above shows good convergence as lap times decrease and throttle values increase over the training period.
 
 ## Further Work
 
