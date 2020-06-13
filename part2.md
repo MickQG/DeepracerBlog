@@ -1,6 +1,6 @@
 # Part 2: Breaking into the Top 10
 
-This is part 2 of the MickQG's Deepracer blog series. You can find Part 1 __[here](https://mickqg.github.io/DeepracerBlog/)__.
+You can find Part 1 __[here](https://mickqg.github.io/DeepracerBlog/)__.
 
 About a week into my Deepracer journey, the <img src="https://render.githubusercontent.com/render/math?math=(Progress/Steps)*Speed"> reward function outlined in [Part 1](https://mickqg.github.io/DeepracerBlog/) hit a 14s brick wall in lap times on the reInvent2019 track. My realisation which solved this problem came as a result of knowing a bit of motor racing and watch many many hours of F1. Why don't we create an optimal racing line that trains the car to hit corner apexes and carry as much speed through the corners as possible? Using waypoints seem to be the [current meta](https://youtu.be/Ao6Ppdz-F1I?t=131) to efficiently train for the fastest laptimes.
 
