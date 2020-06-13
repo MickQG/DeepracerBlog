@@ -7,10 +7,13 @@ About a week into my Deepracer journey, the <img src="https://render.githubuserc
 ## Waypoints, Waypoints, Waypoints
 ![gif](Assets/Gif_large.gif) 
 
-The gif above shows the process of creating the custom racing line. In brief, the track points (center line, outer border and inner border) are loaded into a Jupyter Notebook. As the track is layed out on an x-y grid, we can create the custom racing line using cursor input and perform track analysis. My python implementation can be found __[here](https://github.com/MickQG/deepracer-analysis/blob/master/Track_Analysis.ipynb)__. 
+The gif above shows the process of creating the custom racing line. In brief, the track points (center line, outer border and inner border) are loaded into a Jupyter Notebook. As the track is layed out on an x-y grid, we can create the custom racing line using cursor input. Analysis on the track and racing line can then be performed. My python implementation can be found __[here](https://github.com/MickQG/deepracer-analysis/blob/master/Track_Analysis.ipynb)__.
 
-The racing line is defined by 4 track regions: left, center left, center right and right. The following reward function gives rewards if the model is in the correct track region and penalises if it's not. Furthermore, for each track point there is also a corresponding speed target for which rewards and penalties are given.
+The racing line is defined by 4 track regions: left, center left, center right and right. The following reward function gives rewards if the model is in the correct track region and penalises if it is not. Furthermore, for each track point there is also a corresponding speed target for which rewards and penalties are given.
 
+<details>
+  <summary>Click for reward function</summary>
+    
 ```python
 # Racing line using Waypoints
 def reward_function(params):
@@ -111,7 +114,8 @@ def reward_function(params):
     
     return float(reward)
 ```
-
+</details>
+    
 ## Log Analysis - Deeper into the Rabbit Hole
 
 The general adage of deliberate practice - to practice systematically and purposefully - does also apply to RL. In our case we want to confirm that the action space is suitable for the track and reward function is incentivising the right behaviour. The log analysis tool is vital in understanding your trained model. It has much more detail than graphs in the online training console. Many thanks to Tomasz (Breadcentric) Ptak for maintaining the notebook and making it accessibe through his [blog](https://blog.deepracing.io/2020/03/30/introducing-aws-deepracer-log-analysis/) and [github repo](https://github.com/aws-deepracer-community/deepracer-analysis).
