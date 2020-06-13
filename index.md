@@ -1,6 +1,6 @@
 # Breaking in to the Top 10 of AWS Deepracer Competition - May 2020
 
-As a F1 buff, I came across the AWS Deepracer May 2020 promotional event and couldn't pass on the challenge to pit myself against the ever smiling 7-time F1 race winner Daniel Ricciardo. This article chronicles my 2.5 week journey from a complete AWS Deepracer newbie to placing top 10 of the Beginner Challenge competitive leaderboard. Part 1 of this blog series I'll discuss how I overcame the AWS Deepracer learning curve and present a robust reward function. In [Part 2](part2.md) I will be sharing my insights on how to break into the top 10 of the leaderboard by using waypoints, and also quantifying the training using the log analysis tools. 
+As a F1 buff, I came across the AWS Deepracer May 2020 promotional event and couldn't pass on the challenge to pit myself against the ever smiling 7-time F1 race winner Daniel Ricciardo. This article chronicles my 2.5 week journey from a complete AWS Deepracer newbie to placing top 10 of the Beginner Challenge competitive leaderboard. Part 1 of this blog series I'll discuss how I overcame the AWS Deepracer learning curve and present a robust reward function. In __[Part 2](part2.md)__ I will be sharing my insights on how to break into the top 10 of the leaderboard by using waypoints, and also quantifying the training using the log analysis tools. 
 
 ![leaderboard](Assets/Leaderboard_top10.png)
 
@@ -69,4 +69,4 @@ I could have chosen higher speeds (1.33,1.67,4.0) but the car becomes harder to 
 
 The following quote is quite accurate for my Deepracer journey: "It's useful to imagining deep RL as a demon that's deliberately misinterpreting your reward and actively searching for the laziest possible local optima." For Deepracer, this means for the model to find the best racing line just by random exploration is almost like a monkey with a typewriter eventually writing Shakespeare. The fastest time I found possible with the above set of parameters was 14s for the reInvent2019 track. To get into the top 10, a consistent sub 10s track completions is needed. The only efficient way to do this is to delve into the controversial issue of overfitting the model to the track. 
 
-In the next part of this blog I will share how to break into the leaderboard top 10 with my implementation of the racing line using waypoints. [Click here for Part 2.](part2.md)
+In the next part of this blog I will share how to break into the leaderboard top 10 with my implementation of the racing line using waypoints. __[Click here for Part 2.](part2.md)__
