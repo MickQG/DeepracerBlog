@@ -1,6 +1,6 @@
 # Part 2: Breaking into the Top 10
 
-Edit: The code here is deprecated. With a more robust code requiring only 36 hours of total training time I was crowned the "Winner of Europe, Middle East and Africa - June Qualifier - Time trial". Part 3 update coming in the future.
+Edit: The code here is deprecated. With a more robust code requiring only 36 hours of total training time I was crowned the "Winner of Europe, Middle East and Africa - June Qualifier - Time trial". Part 3 update coming in the future. To note, especially if your cloned base model is not stable enough, _negative rewards_ tend to have bad convergence - car tends to suicide. Like in real life you would rather take no punishment (0 reward driving off track) than punishment (negative reward driving on track). 
 
 You can find Part 1 __[here](https://mickqg.github.io/DeepracerBlog/)__.
 
@@ -114,7 +114,7 @@ def reward_function(params):
                 reward -= (2+params['speed'])**2
                 
     else:
-        reward = 0.01
+        reward = 0.001
     
     return float(reward)
 ```
